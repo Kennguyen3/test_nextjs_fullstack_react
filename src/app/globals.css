@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.custom-checkbox {
+  appearance: none;
+  background-color: #2c7a7b; /* Same as bg-cyan-900 */
+  border: 1px solid #2c7a7b; /* Same as bg-cyan-900 */
+  border-radius: 4px;
+  width: 18px;
+  height: 17px;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-checkbox:checked {
+  background-color: #68d391; /* Same as bg-emerald-400 */
+}
+
+.custom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff; /* White checkmark */
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+}
+
+.custom-pagination .ant-pagination-item {
+  background-color: #092C39; /* Matching the design's card color */
+  border-radius: 8px;
+  margin: 0 4px;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+}
+
+.custom-pagination .ant-pagination-item-active {
+  background-color: #68D391;
+  border-color: #68D391;
+  color: white;
+}
+
+.custom-pagination .ant-pagination-prev,
+.custom-pagination .ant-pagination-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.custom-pagination .ant-pagination-prev:hover,
+.custom-pagination .ant-pagination-next:hover {
+  background-color: transparent;
+}
+
+.custom-pagination .ant-pagination-item a {
+  color: inherit;
+  font-weight: bold;
+  text-align: center;
+}
+
+.custom-pagination .ant-pagination-item-active a {
+  color: white;
+}
+
+.custom-pagination .ant-pagination-prev .ant-pagination-item-link,
+.custom-pagination .ant-pagination-next .ant-pagination-item-link {
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.custom-pagination .ant-pagination-prev .ant-pagination-item-link:hover,
+.custom-pagination .ant-pagination-next .ant-pagination-item-link:hover {
+  background: transparent;
+}
+
+.pagination-prev-next {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
